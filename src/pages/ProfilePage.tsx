@@ -13,10 +13,7 @@ interface ProfilePageProps {
 
 const AVATARS = ["😎", "🦊", "🌸", "🚀", "🎵", "⚡", "🌺", "🔥", "✨", "🎨", "🌊", "🦋", "🐉", "🌙", "🎭", "🦄"];
 
-const MY_POSTS = [
-  { id: 1, text: "Первый пост на платформе! Очень рад быть здесь 🎉", likes: 24, time: "вчера" },
-  { id: 2, text: "Работаю над чем-то интересным... скоро покажу всем 🔥", likes: 41, time: "3 дня назад" },
-];
+
 
 export default function ProfilePage({ currentUser, onUpdateUser }: ProfilePageProps) {
   const [editing, setEditing] = useState(false);
@@ -38,9 +35,9 @@ export default function ProfilePage({ currentUser, onUpdateUser }: ProfilePagePr
   };
 
   const stats = [
-    { label: "Посты", value: "2" },
-    { label: "Подписчики", value: "143" },
-    { label: "Подписки", value: "89" },
+    { label: "Посты", value: "0" },
+    { label: "Подписчики", value: "0" },
+    { label: "Подписки", value: "0" },
   ];
 
   return (
@@ -146,7 +143,11 @@ export default function ProfilePage({ currentUser, onUpdateUser }: ProfilePagePr
         </div>
 
         <div className="flex gap-2 mb-4">
-          <button className="flex-1 py-2.5 rounded-xl font-semibold text-sm text-white neon-glow" style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}>
+          <button
+            onClick={() => { setEditing(true); setShowAvatarPicker(false); }}
+            className="flex-1 py-2.5 rounded-xl font-semibold text-sm text-white neon-glow transition-all hover:scale-[1.02]"
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+          >
             Редактировать профиль
           </button>
           <button className="flex-1 py-2.5 rounded-xl font-semibold text-sm glass text-foreground border border-border/50 hover:border-purple-500/50 transition-colors">
@@ -154,22 +155,10 @@ export default function ProfilePage({ currentUser, onUpdateUser }: ProfilePagePr
           </button>
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Мои публикации</h3>
-          <div className="space-y-3">
-            {MY_POSTS.map(post => (
-              <div key={post.id} className="glass rounded-2xl p-4">
-                <p className="text-sm text-foreground mb-3">{post.text}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Icon name="Heart" size={14} className="text-pink-400" />
-                    {post.likes}
-                  </div>
-                  <span className="text-xs text-muted-foreground">{post.time}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col items-center justify-center py-10 text-center glass rounded-2xl">
+          <div className="text-4xl mb-3">📝</div>
+          <p className="text-sm font-semibold text-foreground mb-1">Публикаций пока нет</p>
+          <p className="text-xs text-muted-foreground">Твои посты из ленты появятся здесь</p>
         </div>
       </div>
     </div>

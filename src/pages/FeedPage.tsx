@@ -21,50 +21,7 @@ interface Post {
 
 const EMOJIS = ["😍", "🔥", "💜", "🚀", "✨", "😂", "❤️", "👏"];
 
-const INITIAL_POSTS: Post[] = [
-  {
-    id: 1,
-    author: "Марина",
-    avatar: "🌸",
-    time: "2 мин назад",
-    text: "Только что закончила работу над новым проектом 🎨 Это было невероятно сложно, но результат стоит того! Иногда нужно просто верить в себя ✨",
-    likes: 142,
-    comments: 23,
-    liked: false,
-    verified: true,
-  },
-  {
-    id: 2,
-    author: "Дима Про",
-    avatar: "🚀",
-    time: "15 мин назад",
-    text: "Запустил новый сервис за выходные 💻 Код, кофе и немного магии — вот и весь рецепт. Кто хочет попробовать первым? @Марина @Алекс",
-    likes: 89,
-    comments: 41,
-    liked: true,
-    verified: true,
-  },
-  {
-    id: 3,
-    author: "Соня",
-    avatar: "🎵",
-    time: "1 час назад",
-    text: "Новый трек готов 🎶 Три месяца работы, сотни итераций, и наконец — то самое ощущение когда всё встаёт на своё место",
-    likes: 334,
-    comments: 67,
-    liked: false,
-  },
-  {
-    id: 4,
-    author: "Иван",
-    avatar: "⚡",
-    time: "3 часа назад",
-    text: "Путешествие во Владивосток — место где заканчивается страна и начинается океан 🌊 Никогда не видел такого заката",
-    likes: 521,
-    comments: 88,
-    liked: false,
-  },
-];
+const INITIAL_POSTS: Post[] = [];
 
 interface FeedPageProps {
   currentUser: User;
@@ -163,6 +120,23 @@ export default function FeedPage({ currentUser }: FeedPageProps) {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {posts.length === 0 && !showCompose && (
+          <div className="flex flex-col items-center justify-center py-16 text-center animate-fade-in">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-4 glass neon-glow">
+              ✍️
+            </div>
+            <h3 className="text-lg font-montserrat font-bold text-foreground mb-2">Лента пока пуста</h3>
+            <p className="text-muted-foreground text-sm max-w-xs">Будь первым — напиши пост и поделись им с сообществом</p>
+            <button
+              onClick={() => setShowCompose(true)}
+              className="mt-5 px-5 py-2.5 rounded-xl text-sm font-semibold text-white neon-glow transition-all hover:scale-105"
+              style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+            >
+              Написать первый пост
+            </button>
           </div>
         )}
 

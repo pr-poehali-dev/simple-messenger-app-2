@@ -57,6 +57,8 @@ const PLANS = [
   },
 ];
 
+const DONATION_URL = "https://www.donationalerts.com/widget/goal/9078534?token=On3f89iw98fFtHqDsRg1";
+
 export default function SubscriptionPage() {
   const [currentPlan] = useState("free");
   const [showCardForm, setShowCardForm] = useState(false);
@@ -75,6 +77,11 @@ export default function SubscriptionPage() {
     const digits = v.replace(/\D/g, "").slice(0, 4);
     if (digits.length >= 2) return digits.slice(0, 2) + "/" + digits.slice(2);
     return digits;
+  };
+
+  const handleSelectPlan = (planId: string) => {
+    setSelectedPlan(planId);
+    window.open(DONATION_URL, "_blank");
   };
 
   const saveCard = () => {
@@ -145,7 +152,7 @@ export default function SubscriptionPage() {
                 </div>
               ) : (
                 <button
-                  onClick={() => { setSelectedPlan(plan.id); setShowCardForm(true); }}
+                  onClick={() => handleSelectPlan(plan.id)}
                   className="w-full py-2.5 rounded-xl font-semibold text-sm text-white transition-all hover:scale-[1.02] active:scale-[0.98]"
                   style={plan.id === "ultra"
                     ? { background: 'linear-gradient(135deg, #F97316, #EC4899)' }
