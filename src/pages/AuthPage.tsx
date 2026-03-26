@@ -48,10 +48,11 @@ export default function AuthPage({ onAuth }: AuthPageProps) {
       <div className="w-full max-w-sm animate-fade-in relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 neon-glow" style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}>
-            <span className="text-2xl font-montserrat font-black text-white">V</span>
+            <span className="text-2xl font-montserrat font-black text-white">+8</span>
           </div>
-          <h1 className="text-4xl font-montserrat font-black gradient-text">VIBE</h1>
-          <p className="text-muted-foreground text-sm mt-1">Социальная платформа нового поколения</p>
+          <h1 className="text-4xl font-montserrat font-black gradient-text">+8</h1>
+          <p className="text-muted-foreground text-sm mt-1">тут могла быть ваша реклама
+(мать повешана)</p>
         </div>
 
         <div className="glass rounded-2xl p-6 gradient-border">
