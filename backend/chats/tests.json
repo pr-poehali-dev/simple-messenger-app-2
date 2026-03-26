@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Get chats missing user_id",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 400,
+      "bodyMatcher": "partial",
+      "expectedBody": {"error": "user_id обязателен"}
+    }
+  ]
+}

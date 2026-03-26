@@ -57,7 +57,7 @@ const PLANS = [
   },
 ];
 
-const DONATION_URL = "https://www.donationalerts.com/widget/goal/9078534?token=On3f89iw98fFtHqDsRg1";
+const DONATION_URL = "https://www.donationalerts.com/r/yanfool1";
 
 export default function SubscriptionPage() {
   const [currentPlan] = useState("free");

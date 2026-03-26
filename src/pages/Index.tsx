@@ -6,11 +6,7 @@ import FeedPage from "./FeedPage";
 import MessengerPage from "./MessengerPage";
 import ProfilePage from "./ProfilePage";
 import SubscriptionPage from "./SubscriptionPage";
-
-interface User {
-  name: string;
-  avatar: string;
-}
+import { User } from "@/lib/api";
 
 type Tab = "home" | "feed" | "messenger" | "profile" | "subscription";
 

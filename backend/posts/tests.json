@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Get posts",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial",
+      "expectedBody": []
+    }
+  ]
+}

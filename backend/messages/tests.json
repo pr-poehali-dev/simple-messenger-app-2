@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Get messages missing chat_id",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 400,
+      "bodyMatcher": "partial",
+      "expectedBody": {"error": "chat_id обязателен"}
+    }
+  ]
+}

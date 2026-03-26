@@ -1,9 +1,5 @@
 import Icon from "@/components/ui/icon";
-
-interface User {
-  name: string;
-  avatar: string;
-}
+import { User } from "@/lib/api";
 
 interface HomePageProps {
   currentUser: User;
