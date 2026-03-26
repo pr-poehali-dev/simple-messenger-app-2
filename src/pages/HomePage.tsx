@@ -12,7 +12,7 @@ export default function HomePage({ currentUser, onNavigate }: HomePageProps) {
       <div className="p-4 pb-2">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <p className="text-muted-foreground text-sm">Добро пожаловать,</p>
+            <p className="text-muted-foreground text-sm">ник хуйня переделывай</p>
             <h2 className="text-2xl font-montserrat font-bold text-foreground">
               {currentUser.name} <span>{currentUser.avatar}</span>
             </h2>
@@ -24,15 +24,13 @@ export default function HomePage({ currentUser, onNavigate }: HomePageProps) {
 
         <div className="glass rounded-2xl p-4 mb-6" style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.15), rgba(236,72,153,0.1))' }}>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl bg-gradient-to-br from-purple-500 to-pink-500">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl from-purple-500 to-pink-500 bg-[#ffffff]">
               {currentUser.avatar}
             </div>
             <button
               onClick={() => onNavigate("feed")}
               className="flex-1 text-left text-muted-foreground text-sm bg-white/5 rounded-xl px-4 py-2.5 border border-white/10 hover:border-purple-500/50 transition-colors"
-            >
-              Что у тебя нового?
-            </button>
+            >я cторiсi снiмаi  </button>
             <button
               onClick={() => onNavigate("feed")}
               className="p-2 rounded-xl text-pink-400 hover:bg-pink-500/10 transition-colors"
@@ -46,10 +44,9 @@ export default function HomePage({ currentUser, onNavigate }: HomePageProps) {
           <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mb-4 glass neon-glow">
             🌍
           </div>
-          <h3 className="text-lg font-montserrat font-bold text-foreground mb-2">Добро пожаловать в VIBE!</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-            Здесь пока пусто — напиши первый пост в ленте, начни общение в чатах или пригласи друзей
-          </p>
+          <h3 className="text-lg font-montserrat font-bold text-foreground mb-2">Добро пожаловать в +8!</h3>
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">поймите истинную суть 
+у вас будет +8 хромосом</p>
           <div className="flex gap-3 mt-6">
             <button
               onClick={() => onNavigate("feed")}
